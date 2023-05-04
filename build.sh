@@ -2,7 +2,7 @@
 
 set -exo pipefail
 
-source env/all_quiet.src
+source env/all.src
 source env/duplicate_exe_outputs.src
 export PATH=`dirname $(pwd)`:$PATH:`pwd`/env/wrappers
 export CC=win-dupebin-cc
