@@ -43,7 +43,7 @@ Section ""
 
 	File output\sbcl.core
 	File src\runtime\sbcl.exe
-	File ..\quasi-msys2\root\ucrt64\bin\zlib1.dll
+	File ..\quasi-msys2\root\mingw64\bin\zlib1.dll
 
 	SetOutPath $INSTDIR\contrib
 	File obj\sbcl-home\contrib\*.*
