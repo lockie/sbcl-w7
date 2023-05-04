@@ -1,0 +1,16 @@
+name: build
+on: [push]
+env:
+  SBCL_VERSION: 2.2.1
+jobs:
+  build:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+      - name: build
+        run: sudo ./bootstrap.sh
+      - name: upload
+        uses: actions/upload-artifact@v3
+        with:
+          path: sbcl-2.2.1-WIP-x86-64-windows-binary.exe

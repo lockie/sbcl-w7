@@ -1,12 +1,5 @@
 #!/usr/bin/env bash
 
-export SBCL_VERSION=2.2.1
-# TODO : also change in .circleci/config.yml
-
-#############################
-# NO CHANGE BELOW THIS LINE #
-#############################
-
 set -exo pipefail
 
 export TERM=linux
