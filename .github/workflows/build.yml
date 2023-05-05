@@ -1,10 +1,12 @@
 name: build
 on: [push]
 env:
-  SBCL_VERSION: 2.2.1
+  SBCL_VERSION: 2.2.2
 jobs:
   build:
     runs-on: ubuntu-22.04
+    permissions:
+      contents: write
     steps:
       - name: checkout
         uses: actions/checkout@v3
@@ -15,3 +17,12 @@ jobs:
         with:
           path: sbcl/sbcl-${{ env.SBCL_VERSION }}-WIP-x86-64-windows-binary.exe
           if-no-files-found: error
+      - name: release
+        uses: ncipollo/release-action@v1
+        with:
+          artifacts: sbcl/sbcl-${{ env.SBCL_VERSION }}-WIP-x86-64-windows-binary.exe
+          omitBody: true
+          allowUpdates: true
+          artifactErrorsFailBuild: true
+          tag: ${{ env.SBCL_VERSION }}
+          commit: master
