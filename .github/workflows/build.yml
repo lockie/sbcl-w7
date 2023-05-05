@@ -1,5 +1,7 @@
 name: build
 on: [push]
+env:
+  SBCL_VERSION: 2.2.1
 jobs:
   build:
     runs-on: ubuntu-22.04
@@ -7,9 +9,9 @@ jobs:
       - name: checkout
         uses: actions/checkout@v3
       - name: build
-        run: sudo sh -c 'export SBCL_VERSION=2.2.1 && ./bootstrap.sh'
+        run: sudo sh -c "export SBCL_VERSION=$SBCL_VERSION && ./bootstrap.sh"
       - name: upload
         uses: actions/upload-artifact@v3
         with:
-          path: sbcl/sbcl-2.2.1-WIP-x86-64-windows-binary.exe
+          path: sbcl/sbcl-${{ env.SBCL_VERSION }}-WIP-x86-64-windows-binary.exe
           if-no-files-found: error
