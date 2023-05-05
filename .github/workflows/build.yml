@@ -15,12 +15,12 @@ jobs:
       - name: upload
         uses: actions/upload-artifact@v3
         with:
-          path: sbcl/sbcl-${{ env.SBCL_VERSION }}-WIP-x86-64-windows-binary.exe
+          path: sbcl/sbcl-${{ env.SBCL_VERSION }}-x86-64-windows-binary.exe
           if-no-files-found: error
       - name: release
         uses: ncipollo/release-action@v1
         with:
-          artifacts: sbcl/sbcl-${{ env.SBCL_VERSION }}-WIP-x86-64-windows-binary.exe
+          artifacts: sbcl/sbcl-${{ env.SBCL_VERSION }}-x86-64-windows-binary.exe
           omitBody: true
           allowUpdates: true
           artifactErrorsFailBuild: true
