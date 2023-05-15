@@ -24,5 +24,5 @@ jobs:
           omitBody: true
           allowUpdates: true
           artifactErrorsFailBuild: true
-          tag: ${{ env.SBCL_VERSION }}
+          tag: ${{ env.SBCL_VERSION }}-build${{ github.run_number }}
           commit: master
