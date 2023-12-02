@@ -6,7 +6,7 @@ export TERM=linux
 export DEBIAN_FRONTEND="noninteractive"
 dpkg --add-architecture i386
 apt-get update -qq
-apt-get install -q -y --no-install-recommends ca-certificates git gpg make msitools nsis tar unzip wget wine winetricks xz-utils zstd
+apt-get install -q -y --no-install-recommends ca-certificates git gpg make msitools nsis sudo tar unzip wget wine winetricks xz-utils zstd
 
 winetricks win7
 wget -q -O /tmp/sbcl-1.4.14-x86-64-windows-binary.msi "https://sourceforge.net/projects/sbcl/files/sbcl/1.4.14/sbcl-1.4.14-x86-64-windows-binary.msi/download"
