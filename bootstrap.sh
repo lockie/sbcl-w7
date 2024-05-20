@@ -17,6 +17,7 @@ git clone --branch sbcl-${SBCL_VERSION} git://git.code.sf.net/p/sbcl/sbcl
 
 git clone --depth=1 https://github.com/HolyBlackCat/quasi-msys2
 cd quasi-msys2
+echo MINGW64 > msystem.txt
 make install _gcc
 
 wget https://github.com/sharkdp/bat/releases/download/v0.23.0/bat-v0.23.0-x86_64-pc-windows-gnu.zip -P /tmp
