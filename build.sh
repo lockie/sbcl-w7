@@ -2,6 +2,7 @@
 
 set -exo pipefail
 
+export WIN_DEFAULT_COMPILER=msys2_gcc
 source env/all.src
 source env/duplicate_exe_outputs.src
 export PATH=`dirname $(pwd)`:$PATH:`pwd`/env/wrappers
