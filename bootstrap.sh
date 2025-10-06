@@ -23,6 +23,7 @@ wget https://github.com/sharkdp/bat/releases/download/v0.23.0/bat-v0.23.0-x86_64
 unzip -j /tmp/bat-v0.23.0-x86_64-pc-windows-gnu.zip bat-v0.23.0-x86_64-pc-windows-gnu/bat.exe -d /root/.wine/drive_c/windows/
 mv /root/.wine/drive_c/windows/bat.exe /root/.wine/drive_c/windows/cat.exe
 
+export WIN_NATIVE_CLANG_FLAGS='--target=x86_64-w64-mingw32 --sysroot=/home/runner/work/sbcl-w7/sbcl-w7/quasi-msys2/root/ucrt64 -pthread -stdlib=libstdc++ -femulated-tls -rtlib=libgcc -unwindlib=libgcc'
 ../build.sh
 
 # TODO : try SBCL_ARCH?..
